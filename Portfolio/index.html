@@ -3,218 +3,96 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio Ethan Lebeul</title>
+  <title>Ethan Lebeul | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="background-glow"></div>
+  
   <header>
-    <div class="container">
-      <nav>
-        <div class="logo-container">
-          <img src="images/moi.jpeg" alt="Photo de moi" class="profile-pic">
-          <h1>Ethan Lebeul</h1>
-        </div>
-        <ul>
-          <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
-          <li><a href="#apropos"><i class="fas fa-user"></i> À propos</a></li>
-          <li><a href="#projets"><i class="fas fa-code"></i> Projets</a></li>
-          <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="container">
+      <div class="logo">
+        <span class="dot"></span> Ethan.<span>dev</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <section id="accueil" class="hero">
-    <h2>Bienvenue dans mon univers numérique</h2>
-    <p>Je m'appelle Ethan Lebeul, étudiant en BUT Informatique à l'IUT de Lannion, passionné par le développement et prêt à relever de nouveaux défis</p>
-    <a href="#contact" class="cta-button"><i class="fas fa-paper-plane"></i> Me contacter</a>
+  <section id="accueil" class="hero container">
+    <div class="hero-content">
+      <span class="badge">Disponible pour une alternance</span>
+      <h1>Concevoir le futur <span>ligne par ligne.</span></h1>
+      <p>Étudiant en BUT Informatique à l'IUT de Lannion, je transforme des idées complexes en solutions numériques élégantes.</p>
+      <div class="hero-btns">
+        <a href="#projets" class="btn primary">Voir mes projets</a>
+        <a href="#contact" class="btn secondary">Me contacter</a>
+      </div>
+    </div>
   </section>
 
-  <section id="apropos">
-    <h2 class="section-title">À propos de moi</h2>
-    <div class="about-content">
-      <img src="images/moi.jpeg" alt="Photo de profil" class="about-image">
-      <div class="about-text">
-        <p>Je suis actuellement en 1ère année de BUT Informatique à l'IUT de Lannion et à la recherche d'une alternance pour mes deux prochaines années d'études.</p>
-        <p>Passionné par le développement logiciel et la création numérique, j'ai développé des compétences solides en programmation et conception d'interfaces. Je suis motivé par l'apprentissage continu et prêt à m'investir pleinement dans des projets innovants.</p>
-        
-        <div class="skills">
-          <h3>Mes compétences</h3>
-          <div class="skill-tags">
-            <span class="skill-tag"><i class="fab fa-html5"></i> HTML</span>
-            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span>
-            <span class="skill-tag"><i class="fab fa-c"></i> langage C</span>
-            <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
-            <span class="skill-tag"><i class="fab fa-python"></i> Python</span>
-            <span class="skill-tag"><i class="fas fa-database"></i> SQL</span>
-            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span>
-            <span class="skill-tag"><i class="fa-brands fa-php"></i> PHP</span>
-          </div>
+  <section id="apropos" class="container">
+    <div class="glass-card about-grid">
+      <div class="about-img-container">
+        <img src="images/moi.jpeg" alt="Ethan Lebeul" class="profile-img">
+      </div>
+      <div class="about-info">
+        <h2 class="section-title">À propos</h2>
+        <p>Passionné par le développement logiciel, j'allie rigueur technique et créativité. Je recherche activement une alternance de 2 ans pour mettre mes compétences au service de projets innovants.</p>
+        <div class="skills-grid">
+          <div class="skill"><i class="fab fa-java"></i> Java</div>
+          <div class="skill"><i class="fab fa-python"></i> Python</div>
+          <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+          <div class="skill"><i class="fas fa-database"></i> SQL</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="projets">
-    <h2 class="section-title">Mes Projets</h2>
+  <section id="projets" class="container">
+    <h2 class="section-title">Projets Sélectionnés</h2>
     <div class="projets-grid">
-      <div class="projet-card">
-        <img src="images/java.png" alt="Image du projet Craft Web" class="projet-image">
-        <h3>Développement d'application</h3>
-        <p>Développement d'une application avec java.</p>
-        <span class="tag"><i class="fab fa-java"></i> Java</span>
-        <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
-      </div>
-      <div class="projet-card">
-        <img src="images/snake.webp" alt="Image du projet Base Tech" class="projet-image">
-        <h3>Jeu Snake</h3>
-        <p>À partir de consignedonnées, j'ai réalisé un jeu snake en langage C</p>
-        <span class="tag"><i class="fab fa-c"></i> langage C</span>
-      </div>
-      <div class="projet-card">
-        <img src="images/bdd.jpg" alt="Image du projet Code Explorer" class="projet-image">
-        <h3>Création d'une base de données</h3>
-        <p>A partir d'un texte , nous devions créer une base de données.</p>
-        <span class="tag"><i class="fas fa-database"></i> SQL</span>
-      </div>
-      <div class="projet-card">
-        <img src="images/gestion-de-projets.jpg" alt="Image du projet Craft Web" class="projet-image">
-        <h3>Gestion de projet</h3>
-        <p>Nous devions réalisé un organigramme des tâches, un digramme de Gantt etc.. <br>Pour la création de l'application en java juste au dessus</p>
-      </div>
-      <div class="projet-card">
-        <img src="images/JO.png" alt="Image du projet Craft Web" class="projet-image">
-        <h3>Site des JO 2024</h3>
-        <p>Nous avons réalisé un site web sur les JO et particulier sur l'escrime.</p>
-        <span class="tag"><i class="fab fa-html5"></i> HTML</span>
-        <span class="tag"><i class="fab fa-css3-alt"></i> CSS</span>
-        <span class="tag"><i class="fab fa-git-alt"></i> Git</span>
-      </div>
-      <div class="projet-card">
-        <img src="images/reseau.jpg" alt="Image du projet Craft Web" class="projet-image">
-        <h3>Installation de services réseau</h3>
-        <p>Nous devions configurer un serveur apache2 pour y mettre un page Web</p>
-        <span class="tag"><i class="fas fa-database"></i> SQL</span>
-        <span class="tag"><i class="fa-brands fa-php"></i> PHP</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Me Contacter</h2>
-      <div class="contact-info">
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-envelope"></i>
-          </div>
-          <div class="contact-text">
-            <h4>Email</h4>
-            <p>lebeul.ethan@gmail.com</p>
-          </div>
+      <div class="project-card">
+        <div class="project-img" style="background-image: url('images/snake.webp')"></div>
+        <div class="project-body">
+          <span class="tag">Java / Swing</span>
+          <h3>Jeu Snake</h3>
+          <p>Développement d'un moteur de jeu classique avec gestion des collisions et système de score dynamique.</p>
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-phone"></i>
-          </div>
-          <div class="contact-text">
-            <h4>Téléphone</h4>
-            <p>+33 6 49 71 53 04</p>
-          </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img" style="background-image: url('images/bdd.jpg')"></div>
+        <div class="project-body">
+          <span class="tag">SQL / UML</span>
+          <h3>Architecture BDD</h3>
+          <p>Conception et optimisation d'une base de données relationnelle pour un système de gestion complexe.</p>
         </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-map-marker-alt"></i>
-          </div>
-          <div class="contact-text">
-            <h4>Localisation</h4>
-            <p>Hanvec (29460), Bretagne, France</p>
-            <p>Lannion (22300), Bretagne, France</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fas fa-university"></i>
-          </div>
-          <div class="contact-text">
-            <h4>Formation</h4>
-            <p>IUT de Lannion - BUT Informatique</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">
-            <i class="fa-solid fa-file"></i>
-          </div>
-          <div class="contact-cv">
-            <div class="contact-text">
-              <h4>Mon CV</h4>
-            </div>
-            <a href="CV_Ethan_Lebeul.pdf" download="CV_Ethan_Lebeul.pdf" class="bouton">Télécharger</a>
-          </div>
+      </div>
+      <div class="project-card">
+        <div class="project-img" style="background-image: url('images/JO.png')"></div>
+        <div class="project-body">
+          <span class="tag">Web Design</span>
+          <h3>Plateforme JO 2024</h3>
+          <p>Interface responsive dédiée au suivi des épreuves, mettant l'accent sur l'expérience utilisateur.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h3>Ethan Lebeul</h3>
-          <p>Étudiant en BUT Informatique à l'IUT de Lannion, passionné par le développement et à la recherche d'une alternance.</p>
-          <div class="social-links">
-            <a href="https://www.linkedin.com/in/ethan-lebeul-16a605355/" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/Ethan-Lebeul?tab=overview&from=2025-06-01&to=2025-06-03" class="social-link"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="footer-section">
-          <h3>Liens rapides</h3>
-          <ul class="footer-links">
-            <li><a href="#accueil"><i class="fas fa-chevron-right"></i> Accueil</a></li>
-            <li><a href="#apropos"><i class="fas fa-chevron-right"></i> À propos</a></li>
-            <li><a href="#projets"><i class="fas fa-chevron-right"></i> Projets</a></li>
-            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="copyright">
-        <p>&copy; 2025 Ethan Lebeul - Étudiant à l'IUT Lannion</p>
+  <footer class="container">
+    <div class="glass-card footer-inner">
+      <p>&copy; 2025 Ethan Lebeul. Fait avec passion en Bretagne.</p>
+      <div class="socials">
+        <a href="https://github.com/Ethan-Lebeul"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/ethan-lebeul-16a605355/"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
   </footer>
-
-  <script>
-    // Ajout d'animations au scroll
-    document.addEventListener('DOMContentLoaded', function() {
-      const sections = document.querySelectorAll('section');
-      
-      function checkScroll() {
-        sections.forEach(section => {
-          const sectionTop = section.getBoundingClientRect().top;
-          const windowHeight = window.innerHeight;
-          
-          if (sectionTop < windowHeight * 0.75) {
-            section.style.opacity = '1';
-            section.style.transform = 'translateY(0)';
-          }
-        });
-      }
-      
-      // Initial setup
-      sections.forEach(section => {
-        if (section.id !== 'accueil') {
-          section.style.opacity = '0';
-          section.style.transform = 'translateY(20px)';
-          section.style.transition = 'all 0.8s ease-out';
-        }
-      });
-      
-      // Check on load
-      checkScroll();
-      
-      // Check on scroll
-      window.addEventListener('scroll', checkScroll);
-    });
-  </script>
 </body>
 </html>
