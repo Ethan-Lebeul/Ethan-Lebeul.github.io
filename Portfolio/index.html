@@ -6,93 +6,88 @@
   <title>Ethan Lebeul | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="background-glow"></div>
-  
-  <header>
-    <nav class="container">
-      <div class="logo">
-        <span class="dot"></span> Ethan.<span>dev</span>
-      </div>
+  <nav>
+    <div class="container nav-flex">
+      <div class="logo">ETHAN<span>.DEV</span></div>
       <ul class="nav-links">
-        <li><a href="#accueil">Accueil</a></li>
         <li><a href="#apropos">À propos</a></li>
         <li><a href="#projets">Projets</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-    </nav>
+    </div>
+  </nav>
+
+  <header class="hero container">
+    <span class="badge">Étudiant en BUT Informatique</span>
+    <h1>Développeur de solutions <span>numériques.</span></h1>
+    <p>Passionné par le code propre et l'innovation, je recherche une alternance pour transformer vos idées en réalité technique.</p>
+    <div class="hero-btns">
+      <a href="#projets" class="btn-primary">Voir mes projets</a>
+      <a href="CV_Ethan_Lebeul.pdf" class="btn-secondary" download>Télécharger CV</a>
+    </div>
   </header>
 
-  <section id="accueil" class="hero container">
-    <div class="hero-content">
-      <span class="badge">Disponible pour une alternance</span>
-      <h1>Concevoir le futur <span>ligne par ligne.</span></h1>
-      <p>Étudiant en BUT Informatique à l'IUT de Lannion, je transforme des idées complexes en solutions numériques élégantes.</p>
-      <div class="hero-btns">
-        <a href="#projets" class="btn primary">Voir mes projets</a>
-        <a href="#contact" class="btn secondary">Me contacter</a>
-      </div>
-    </div>
-  </section>
-
   <section id="apropos" class="container">
-    <div class="glass-card about-grid">
-      <div class="about-img-container">
-        <img src="images/moi.jpeg" alt="Ethan Lebeul" class="profile-img">
-      </div>
-      <div class="about-info">
-        <h2 class="section-title">À propos</h2>
-        <p>Passionné par le développement logiciel, j'allie rigueur technique et créativité. Je recherche activement une alternance de 2 ans pour mettre mes compétences au service de projets innovants.</p>
-        <div class="skills-grid">
-          <div class="skill"><i class="fab fa-java"></i> Java</div>
-          <div class="skill"><i class="fab fa-python"></i> Python</div>
-          <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
-          <div class="skill"><i class="fas fa-database"></i> SQL</div>
+    <div class="section-header">
+      <h2>À propos de moi</h2>
+      <div class="line"></div>
+    </div>
+    <div class="about-card">
+      <div class="about-text">
+        <p>Actuellement à l'IUT de Lannion, je forge mes compétences en développement logiciel et gestion de données.</p>
+        <div class="skills-tags">
+          <span class="tag">Java</span><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">JavaScript</span><span class="tag">Git</span>
         </div>
       </div>
     </div>
   </section>
 
   <section id="projets" class="container">
-    <h2 class="section-title">Projets Sélectionnés</h2>
-    <div class="projets-grid">
-      <div class="project-card">
-        <div class="project-img" style="background-image: url('images/snake.webp')"></div>
-        <div class="project-body">
-          <span class="tag">Java / Swing</span>
+    <div class="section-header">
+      <h2>Projets Récents</h2>
+      <div class="line"></div>
+    </div>
+    <div class="grid">
+      <div class="card">
+        <div class="card-img" style="background-image: url('images/snake.webp')"></div>
+        <div class="card-content">
           <h3>Jeu Snake</h3>
-          <p>Développement d'un moteur de jeu classique avec gestion des collisions et système de score dynamique.</p>
+          <p>Implémentation logique en Java avec interface graphique Swing.</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-img" style="background-image: url('images/bdd.jpg')"></div>
-        <div class="project-body">
-          <span class="tag">SQL / UML</span>
-          <h3>Architecture BDD</h3>
-          <p>Conception et optimisation d'une base de données relationnelle pour un système de gestion complexe.</p>
+      <div class="card">
+        <div class="card-img" style="background-image: url('images/bdd.jpg')"></div>
+        <div class="card-content">
+          <h3>Base de données</h3>
+          <p>Conception SQL optimisée pour la gestion de ressources numériques.</p>
         </div>
       </div>
-      <div class="project-card">
-        <div class="project-img" style="background-image: url('images/JO.png')"></div>
-        <div class="project-body">
-          <span class="tag">Web Design</span>
-          <h3>Plateforme JO 2024</h3>
-          <p>Interface responsive dédiée au suivi des épreuves, mettant l'accent sur l'expérience utilisateur.</p>
+      <div class="card">
+        <div class="card-img" style="background-image: url('images/JO.png')"></div>
+        <div class="card-content">
+          <h3>Site JO 2024</h3>
+          <p>Développement web responsive orienté expérience utilisateur.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="container">
-    <div class="glass-card footer-inner">
-      <p>&copy; 2025 Ethan Lebeul. Fait avec passion en Bretagne.</p>
+  <section id="contact" class="container">
+    <div class="contact-box">
+      <h2>Travaillons ensemble</h2>
+      <p>lebeul.ethan@gmail.com</p>
       <div class="socials">
         <a href="https://github.com/Ethan-Lebeul"><i class="fab fa-github"></i></a>
         <a href="https://www.linkedin.com/in/ethan-lebeul-16a605355/"><i class="fab fa-linkedin"></i></a>
       </div>
     </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Ethan Lebeul - IUT Lannion</p>
   </footer>
 </body>
 </html>
