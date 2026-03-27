@@ -1,45 +1,47 @@
 :root {
-    --ark-bg: #030a0f;
+    --bg: #020b12;
     --tek-cyan: #00f2ff;
     --tek-blue: #0066ff;
-    --text-color: #e0faff;
-    --glass: rgba(0, 242, 255, 0.05);
+    --text-primary: #e0faff;
+    --text-secondary: #94a3b8;
+    --glass: rgba(0, 242, 255, 0.03);
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    background-color: var(--ark-bg);
-    color: var(--text-color);
-    font-family: 'Orbitron', sans-serif;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* Effet de scanlines (lignes de vieux moniteur) */
+h1, h2, h3, .logo, .btn-tek, .card-header {
+    font-family: 'Orbitron', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Effet Scanlines discret */
 .scanlines {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
-                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
-    background-size: 100% 4px, 3px 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.05) 50%);
+    background-size: 100% 4px;
     pointer-events: none;
     z-index: 9999;
 }
 
-/* Navbar HUD */
+/* Navbar */
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 80px;
-    background: rgba(0, 20, 30, 0.8);
-    border-bottom: 1px solid var(--tek-cyan);
+    height: 70px;
+    background: rgba(2, 11, 18, 0.9);
+    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
     backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
@@ -47,128 +49,120 @@ nav {
 }
 
 .logo span { color: var(--tek-cyan); text-shadow: 0 0 10px var(--tek-cyan); }
-
 .nav-links { display: flex; list-style: none; }
 .nav-links a {
-    color: var(--text-color);
+    color: var(--text-secondary);
     text-decoration: none;
     margin: 0 15px;
-    font-size: 0.9rem;
-    letter-spacing: 2px;
+    font-size: 0.8rem;
     transition: 0.3s;
 }
 .nav-links a:hover { color: var(--tek-cyan); }
 
-/* Hero Section & Stats */
+/* Hero Section */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: radial-gradient(circle at center, #002b36 0%, #030a0f 100%);
+    padding: 0 20px;
 }
 
-.highlight { color: var(--tek-cyan); text-shadow: 0 0 15px var(--tek-cyan); }
-
-.implant-icon {
-    width: 60px;
-    height: 60px;
+.tek-icon {
+    width: 50px;
+    height: 50px;
     background: var(--tek-cyan);
-    margin: 0 auto 20px;
+    margin: 0 auto 30px;
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    box-shadow: 0 0 30px var(--tek-cyan);
-    animation: pulse 2s infinite;
+    box-shadow: 0 0 20px var(--tek-cyan);
+    animation: glow 3s infinite;
 }
 
-@keyframes pulse {
-    0% { transform: scale(1); opacity: 0.8; }
-    50% { transform: scale(1.1); opacity: 1; }
-    100% { transform: scale(1); opacity: 0.8; }
+@keyframes glow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.1); }
 }
 
+.highlight { color: var(--tek-cyan); }
+
+/* Status Bars */
 .status-container {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     justify-content: center;
-    margin: 30px 0;
+    margin: 40px 0;
 }
 
-.bar-bg {
-    width: 100px;
-    height: 6px;
-    background: #111;
-    border: 1px solid var(--tek-cyan);
-    margin-bottom: 5px;
-}
-
-.bar-fill { height: 100%; }
-.health { background: #ff4b4b; width: 80%; }
-.energy { background: #00ff88; width: 60%; }
-.tech { background: var(--tek-cyan); width: 95%; }
+.stat-item span { font-size: 0.65rem; color: var(--text-secondary); display: block; margin-top: 5px; }
+.bar-bg { width: 120px; height: 4px; background: #111; border: 1px solid rgba(0, 242, 255, 0.3); }
+.bar-fill { height: 100%; background: var(--tek-cyan); box-shadow: 0 0 10px var(--tek-cyan); }
+.code { width: 90%; }
+.logic { width: 85%; }
+.design { width: 75%; }
 
 .btn-tek {
-    padding: 15px 40px;
+    padding: 16px 35px;
     background: transparent;
     border: 1px solid var(--tek-cyan);
     color: var(--tek-cyan);
-    font-family: 'Orbitron';
     cursor: pointer;
     transition: 0.3s;
-    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    font-size: 0.9rem;
 }
 
 .btn-tek:hover {
-    background: var(--tek-cyan);
-    color: #000;
-    box-shadow: 0 0 20px var(--tek-cyan);
+    background: rgba(0, 242, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
 }
 
-/* Projects Cards */
+/* Projects Section */
 #projects { padding: 100px 10%; }
-.section-title { text-align: center; margin-bottom: 50px; letter-spacing: 5px; }
+.section-title { text-align: center; margin-bottom: 60px; font-size: 1.8rem; color: var(--tek-cyan); }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
 }
 
 .project-card {
-    background: rgba(0, 242, 255, 0.03);
-    border: 1px solid rgba(0, 242, 255, 0.3);
-    padding: 0;
+    background: var(--glass);
+    border: 1px solid rgba(0, 242, 255, 0.1);
     backdrop-filter: blur(5px);
+    clip-path: polygon(0 0, 95% 0, 100% 10%, 100% 100%, 5% 100%, 0 90%);
     transition: 0.4s;
-    clip-path: polygon(0 0, 92% 0, 100% 15%, 100% 100%, 8% 100%, 0 85%);
+}
+
+.project-card:hover {
+    border-color: var(--tek-cyan);
+    transform: translateY(-5px);
 }
 
 .card-header {
-    background: rgba(0, 242, 255, 0.1);
-    padding: 10px;
-    font-size: 0.7rem;
-    border-bottom: 1px solid rgba(0, 242, 255, 0.3);
-}
-
-.project-info { padding: 25px; }
-.project-card:hover {
-    border-color: var(--tek-cyan);
-    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
-}
-
-/* Contact Form */
-#contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-}
-
-input, textarea {
     background: rgba(0, 242, 255, 0.05);
-    border: 1px solid #004455;
-    padding: 15px;
-    margin-bottom: 15px;
-    color: #fff;
-    font-family: 'Orbitron';
+    padding: 12px 20px;
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(0, 242, 255, 0.1);
 }
+
+.project-info { padding: 30px; }
+.project-info h3 { margin-bottom: 10px; font-size: 1.2rem; }
+.project-info p { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px; }
+.link { color: var(--tek-cyan); text-decoration: none; font-size: 0.8rem; font-weight: bold; }
+
+/* Formulaire */
+#contact { padding: 100px 10%; background: rgba(0, 0, 0, 0.2); }
+#contact-form { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; }
+input, textarea {
+    background: rgba(0, 242, 255, 0.02);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Inter';
+    border-radius: 4px;
+}
+input:focus, textarea:focus { outline: none; border-color: var(--tek-cyan); }

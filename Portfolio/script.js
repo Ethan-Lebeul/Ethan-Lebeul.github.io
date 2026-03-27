@@ -1,42 +1,42 @@
-// Effet Typewriter
-const text = "DÉVELOPPEUR FULLSTACK // PROTOCOLE ARK ACTIVÉ";
+// Effet de frappe (Typewriter)
+const text = "Développeur Fullstack & Designer d'interfaces";
 let index = 0;
 
 function typeWriter() {
     if (index < text.length) {
-        document.getElementById("typewriter").innerHTML = text.substring(0, index + 1) + '<span style="border-right: 2px solid var(--tek-cyan)"></span>';
+        document.getElementById("typewriter").innerHTML = text.substring(0, index + 1) + '<span class="cursor">|</span>';
         index++;
-        setTimeout(typeWriter, 80);
+        setTimeout(typeWriter, 50);
     }
 }
 
-// Animation des barres de stats au chargement
-function animateStats() {
-    const bars = document.querySelectorAll('.bar-fill');
-    bars.forEach(bar => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        setTimeout(() => {
-            bar.style.transition = 'width 2s ease-out';
-            bar.style.width = width;
-        }, 500);
+// Animation des barres de compétences au scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const bars = entry.target.querySelectorAll('.bar-fill');
+            bars.forEach(bar => {
+                const targetWidth = bar.parentElement.dataset.width || "90%"; // fallback
+                bar.style.width = targetWidth;
+            });
+        }
     });
-}
+}, { threshold: 0.5 });
 
-// Navigation fluide et effet de scroll sur la navbar
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) {
-        nav.style.background = 'rgba(0, 10, 15, 0.95)';
-        nav.style.boxShadow = '0 0 20px rgba(0, 242, 255, 0.2)';
-    } else {
-        nav.style.background = 'rgba(0, 20, 30, 0.8)';
-        nav.style.boxShadow = 'none';
-    }
-});
-
-// Lancer au démarrage
+// Initialisation
 window.onload = () => {
     typeWriter();
-    animateStats();
+    
+    // Ajout d'une animation douce pour l'apparition des cartes projets
+    const cards = document.querySelectorAll('.project-card');
+    cards.forEach((card, i) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+        card.style.transition = `all 0.6s ease ${i * 0.2}s`;
+        
+        setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }, 500);
+    });
 };
