@@ -1,9 +1,9 @@
 :root {
-    --bg-color: #0f172a;
-    --card-bg: #1e293b;
-    --text-color: #f1f5f9;
-    --accent-color: #38bdf8;
-    --secondary-color: #818cf8;
+    --ark-bg: #030a0f;
+    --tek-cyan: #00f2ff;
+    --tek-blue: #0066ff;
+    --text-color: #e0faff;
+    --glass: rgba(0, 242, 255, 0.05);
 }
 
 * {
@@ -13,81 +13,120 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--bg-color);
+    background-color: var(--ark-bg);
     color: var(--text-color);
+    font-family: 'Orbitron', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
-/* Navbar */
+/* Effet de scanlines (lignes de vieux moniteur) */
+.scanlines {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.02), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.02));
+    background-size: 100% 4px, 3px 100%;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Navbar HUD */
 nav {
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 80px;
-    background: rgba(15, 23, 42, 0.95);
+    background: rgba(0, 20, 30, 0.8);
+    border-bottom: 1px solid var(--tek-cyan);
+    backdrop-filter: blur(10px);
     position: fixed;
     width: 100%;
     z-index: 1000;
-    transition: 0.3s;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
+.logo span { color: var(--tek-cyan); text-shadow: 0 0 10px var(--tek-cyan); }
 
-.logo span { color: var(--accent-color); }
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li a {
+.nav-links { display: flex; list-style: none; }
+.nav-links a {
     color: var(--text-color);
     text-decoration: none;
-    margin: 0 20px;
-    font-weight: 500;
+    margin: 0 15px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
     transition: 0.3s;
 }
+.nav-links a:hover { color: var(--tek-cyan); }
 
-.nav-links li a:hover { color: var(--accent-color); }
-
-/* Hero Section */
+/* Hero Section & Stats */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.7)), 
-                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
+    background: radial-gradient(circle at center, #002b36 0%, #030a0f 100%);
 }
 
-.hero h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-.highlight { color: var(--accent-color); }
+.highlight { color: var(--tek-cyan); text-shadow: 0 0 15px var(--tek-cyan); }
 
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: var(--accent-color);
-    color: var(--bg-color);
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: 0.3s transform;
+.implant-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--tek-cyan);
+    margin: 0 auto 20px;
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    box-shadow: 0 0 30px var(--tek-cyan);
+    animation: pulse 2s infinite;
 }
 
-.btn:hover { transform: translateY(-5px); }
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 0.8; }
+}
 
-/* Projects Grid */
+.status-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.bar-bg {
+    width: 100px;
+    height: 6px;
+    background: #111;
+    border: 1px solid var(--tek-cyan);
+    margin-bottom: 5px;
+}
+
+.bar-fill { height: 100%; }
+.health { background: #ff4b4b; width: 80%; }
+.energy { background: #00ff88; width: 60%; }
+.tech { background: var(--tek-cyan); width: 95%; }
+
+.btn-tek {
+    padding: 15px 40px;
+    background: transparent;
+    border: 1px solid var(--tek-cyan);
+    color: var(--tek-cyan);
+    font-family: 'Orbitron';
+    cursor: pointer;
+    transition: 0.3s;
+    clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+}
+
+.btn-tek:hover {
+    background: var(--tek-cyan);
+    color: #000;
+    box-shadow: 0 0 20px var(--tek-cyan);
+}
+
+/* Projects Cards */
 #projects { padding: 100px 10%; }
-.section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; }
+.section-title { text-align: center; margin-bottom: 50px; letter-spacing: 5px; }
 
 .projects-grid {
     display: grid;
@@ -96,25 +135,28 @@ nav {
 }
 
 .project-card {
-    background: var(--card-bg);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s;
+    background: rgba(0, 242, 255, 0.03);
+    border: 1px solid rgba(0, 242, 255, 0.3);
+    padding: 0;
+    backdrop-filter: blur(5px);
+    transition: 0.4s;
+    clip-path: polygon(0 0, 92% 0, 100% 15%, 100% 100%, 8% 100%, 0 85%);
 }
 
-.project-card:hover { transform: scale(1.03); }
-
-.project-img {
-    height: 200px;
-    background: var(--secondary-color);
-    opacity: 0.5;
+.card-header {
+    background: rgba(0, 242, 255, 0.1);
+    padding: 10px;
+    font-size: 0.7rem;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.3);
 }
 
-.project-info { padding: 20px; }
-.project-info a { color: var(--accent-color); text-decoration: none; font-weight: bold; }
+.project-info { padding: 25px; }
+.project-card:hover {
+    border-color: var(--tek-cyan);
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.2);
+}
 
 /* Contact Form */
-#contact { padding: 80px 10%; background: #111827; }
 #contact-form {
     max-width: 600px;
     margin: 0 auto;
@@ -123,10 +165,10 @@ nav {
 }
 
 input, textarea {
-    background: var(--card-bg);
-    border: 1px solid #334155;
+    background: rgba(0, 242, 255, 0.05);
+    border: 1px solid #004455;
     padding: 15px;
     margin-bottom: 15px;
-    border-radius: 8px;
-    color: white;
+    color: #fff;
+    font-family: 'Orbitron';
 }

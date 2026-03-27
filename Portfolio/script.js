@@ -1,28 +1,42 @@
 // Effet Typewriter
-const text = "Développeur Fullstack & Designer UI/UX";
+const text = "DÉVELOPPEUR FULLSTACK // PROTOCOLE ARK ACTIVÉ";
 let index = 0;
 
 function typeWriter() {
     if (index < text.length) {
-        document.getElementById("typewriter").innerHTML = text.substring(0, index + 1) + '<span aria-hidden="true"></span>';
+        document.getElementById("typewriter").innerHTML = text.substring(0, index + 1) + '<span style="border-right: 2px solid var(--tek-cyan)"></span>';
         index++;
-        setTimeout(typeWriter, 100);
+        setTimeout(typeWriter, 80);
     }
 }
 
-// Changement de couleur de la navbar au scroll
+// Animation des barres de stats au chargement
+function animateStats() {
+    const bars = document.querySelectorAll('.bar-fill');
+    bars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0';
+        setTimeout(() => {
+            bar.style.transition = 'width 2s ease-out';
+            bar.style.width = width;
+        }, 500);
+    });
+}
+
+// Navigation fluide et effet de scroll sur la navbar
 window.addEventListener('scroll', () => {
-    const navbar = document.getElementById('navbar');
+    const nav = document.querySelector('nav');
     if (window.scrollY > 50) {
-        navbar.style.background = '#0f172a';
-        navbar.style.boxShadow = '0 5px 20px rgba(0,0,0,0.5)';
+        nav.style.background = 'rgba(0, 10, 15, 0.95)';
+        nav.style.boxShadow = '0 0 20px rgba(0, 242, 255, 0.2)';
     } else {
-        navbar.style.background = 'transparent';
-        navbar.style.boxShadow = 'none';
+        nav.style.background = 'rgba(0, 20, 30, 0.8)';
+        nav.style.boxShadow = 'none';
     }
 });
 
-// Lancer les fonctions au chargement
+// Lancer au démarrage
 window.onload = () => {
     typeWriter();
+    animateStats();
 };

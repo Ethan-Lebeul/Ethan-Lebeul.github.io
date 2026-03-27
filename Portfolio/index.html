@@ -3,77 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio | Créateur Digital</title>
+    <title>Survivor Dossier | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/your-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
+    <div class="scanlines"></div>
+
     <nav id="navbar">
-        <div class="logo">Portfolio<span>.</span></div>
+        <div class="logo">SURVIVOR<span>_ID</span></div>
         <ul class="nav-links">
-            <li><a href="#home">Accueil</a></li>
-            <li><a href="#projects">Projets</a></li>
-            <li><a href="#skills">Compétences</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home">Dossier</a></li>
+            <li><a href="#projects">Artéfacts</a></li>
+            <li><a href="#skills">Engrammes</a></li>
+            <li><a href="#contact">Transmissions</a></li>
         </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
     </nav>
 
     <header id="home" class="hero">
         <div class="hero-content">
-            <h1>Salut, je suis <span class="highlight">Ton Nom</span></h1>
-            <p id="typewriter">Développeur Fullstack & Designer</p>
-            <a href="#projects" class="btn">Voir mes travaux</a>
+            <div class="implant-icon"></div>
+            <h1>ID_USER: <span class="highlight">Ton Nom</span></h1>
+            <p id="typewriter">Initialisation du système de survie...</p>
+            
+            <div class="status-container">
+                <div class="stat-item">
+                    <div class="bar-bg"><div class="bar-fill health"></div></div>
+                    <span>SANTÉ</span>
+                </div>
+                <div class="stat-item">
+                    <div class="bar-bg"><div class="bar-fill energy"></div></div>
+                    <span>ÉNERGIE</span>
+                </div>
+                <div class="stat-item">
+                    <div class="bar-bg"><div class="bar-fill tech"></div></div>
+                    <span>TEK</span>
+                </div>
+            </div>
+            
+            <a href="#projects" class="btn-tek">ACCÉDER AUX DONNÉES</a>
         </div>
     </header>
 
     <section id="projects">
-        <h2 class="section-title">Mes Projets</h2>
+        <h2 class="section-title">Archives des Artéfacts</h2>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-img"></div>
+                <div class="card-header">DATA_LOG_01</div>
                 <div class="project-info">
-                    <h3>Projet E-commerce</h3>
-                    <p>Une application web complète avec React et Node.js.</p>
-                    <a href="#">Détails →</a>
+                    <h3>Projet Alpha</h3>
+                    <p>Développement d'une interface neuronale synchronisée.</p>
+                    <a href="#" class="link">VOIR DATA ></a>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-img"></div>
+                <div class="card-header">DATA_LOG_02</div>
                 <div class="project-info">
-                    <h3>App de Gestion</h3>
-                    <p>Dashboard interactif avec visualisation de données.</p>
-                    <a href="#">Détails →</a>
+                    <h3>Projet Beta</h3>
+                    <p>Base de données sécurisée sur serveur Obélisque.</p>
+                    <a href="#" class="link">VOIR DATA ></a>
                 </div>
             </div>
             <div class="project-card">
-                <div class="project-img"></div>
+                <div class="card-header">DATA_LOG_03</div>
                 <div class="project-info">
-                    <h3>Design System</h3>
-                    <p>Création d'une charte graphique moderne pour SaaS.</p>
-                    <a href="#">Détails →</a>
+                    <h3>Projet Gamma</h3>
+                    <p>Optimisation des ressources de récolte automatisée.</p>
+                    <a href="#" class="link">VOIR DATA ></a>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <h2 class="section-title">Me Contacter</h2>
-        <form id="contact-form">
-            <input type="text" placeholder="Nom" required>
-            <input type="email" placeholder="Email" required>
-            <textarea placeholder="Votre message" rows="5" required></textarea>
-            <button type="submit" class="btn">Envoyer</button>
-        </form>
+        <h2 class="section-title">Fréquence de Transmission</h2>
+        <div class="contact-container">
+            <form id="contact-form">
+                <input type="text" placeholder="ID_EXPEDITEUR" required>
+                <input type="email" placeholder="CANAL_COMM_EMAIL" required>
+                <textarea placeholder="MESSAGE_CRYPTE..." rows="5" required></textarea>
+                <button type="submit" class="btn-tek">ENVOYER LE SIGNAL</button>
+            </form>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Ton Nom - Fait avec ✨</p>
+        <p>&copy; 2026 - PROTOCOLE SURVIVANT ACTIVÉ</p>
     </footer>
 
     <script src="script.js"></script>
